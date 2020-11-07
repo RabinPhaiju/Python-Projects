@@ -1,0 +1,18 @@
+Functions
+1. without positional arguments/ parameters
+2. with positional arguments/ parameters
+3. (pass by values/reference)? - pass by assignment
+4. packing and unpacking
+5. default parameters
+6. lambda functions
+7. multiple returns
+8. higher order functions
+
+
+
+pip
+virtual environment
+modules / packages
+zango
+oop ->class
+pep 8 style guide

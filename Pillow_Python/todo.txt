@@ -1,0 +1,2 @@
+look in documention to learn more about PIL.
+Dont rely on tutorials

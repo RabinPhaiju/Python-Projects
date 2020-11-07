@@ -1,0 +1,2 @@
+The app brings the power of books at your fingertips. Its combines the world of Google books store into one single place with a very simple, easy to understand interface. No expert knowledge and learning curve involved. Enjoy reading.
+//test

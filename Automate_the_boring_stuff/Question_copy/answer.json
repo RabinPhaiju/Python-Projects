@@ -1,0 +1,82 @@
+[
+  {
+    "question": "If a denormalization situation exists with a one-to-one binary relationship, which of the following is true?",
+    "a": "All fields are stored in one relation.",
+    "b": "All fields are stored in two relations.",
+    "c": "All fields are stored in three relations.",
+    "d": "All fields are stored in four relations.",
+    "answer": "All fields are stored in one relation."
+  },
+  {
+    "question": "Selecting a data type involves which of the following?",
+    "a": "Maximize storage space",
+    "b": "Represent most values",
+    "c": "Improve data integrity",
+    "d": "All of the above.",
+    "answer": "Improve data integrity"
+  },
+  {
+    "question": "What is the best data type definition for Oracle when a field is alphanumeric and has a length that can vary?",
+    "a": "VARCHAR2",
+    "b": "CHAR",
+    "c": "LONG",
+    "d": "NUMBER",
+    "answer": "VARCHAR2"
+  },
+  {
+    "question": "If a denormalization situation exists with a many-to-many or associative binary relationship, which of the following is true?",
+    "a": "All fields are stored in one relation.",
+    "b": "All fields are stored in two relations.",
+    "c": "All fields are stored in three relations.",
+    "d": "All fields are stored in four relations.",
+    "answer": "All fields are stored in two relations."
+  },
+  {
+    "question": "Which of the following is an advantage of partitioning?",
+    "a": "Complexity",
+    "b": "Inconsistent access speed",
+    "c": "Extra space",
+    "d": "Security",
+    "answer": "Security"
+  },
+  {
+    "question": "If a denormalization situation exists with a one-to-one binary relationship, which of the following is true?",
+    "a": "All fields are stored in one relation.",
+    "b": "All fields are stored in two relations.",
+    "c": "All fields are stored in three relations.",
+    "d": "All fields are stored in four relations.",
+    "answer": "All fields are stored in one relation."
+  },
+  {
+    "question": "Selecting a data type involves which of the following?",
+    "a": "Maximize storage space",
+    "b": "Represent most values",
+    "c": "Improve data integrity",
+    "d": "All of the above.",
+    "answer": "Improve data integrity"
+  },
+  {
+    "question": "What is the best data type definition for Oracle when a field is alphanumeric and has a length that can vary?",
+    "a": "VARCHAR2",
+    "b": "CHAR",
+    "c": "LONG",
+    "d": "NUMBER",
+    "answer": "VARCHAR2"
+  },
+  {
+    "question": "If a denormalization situation exists with a many-to-many or associative binary relationship, which of the following is true?",
+    "a": "All fields are stored in one relation.",
+    "b": "All fields are stored in two relations.",
+    "c": "All fields are stored in three relations.",
+    "d": "All fields are stored in four relations.",
+    "answer": "All fields are stored in two relations."
+  },
+  {
+    "question": "Which of the following is an advantage of partitioning?",
+    "a": "Complexity",
+    "b": "Inconsistent access speed",
+    "c": "Extra space",
+    "d": "Security",
+    "answer": "Security"
+  }
+]

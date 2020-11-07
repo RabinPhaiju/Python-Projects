@@ -1,0 +1,12 @@
+1. Create a class named 'Circle' with an attribute 'radius' and two methods that
+returns area and perimeter of the circle respectively.
+
+2. Create a class name 'Vehicle' with attributes 'name', 'speed' and 'manufacturer'
+and a method to get the speed. Further extend this class into two other classes named 'Car'
+and 'Plane' with car having attributes 'horsepower' for 'Car' and 'engines' for 'Plane'.
+Use constructors to initialize the initial values.
+
+3. Write a class with that has an attribute which stores a multi word string,
+ and a method that gives that string in reverse order word-by-word
+e.g. 'This is a test'
+output: 'test a is This'

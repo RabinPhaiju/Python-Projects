@@ -1,0 +1,84 @@
+IndiaBIX.Com
+ 
+Search...
+MenuHomeAptitudeLogicalVerbalCurrent AffairsGKEngineeringInterviewOnline TestsPuzzles
+Database :: Physical Database Design
+Home » Engineering » Database » Physical Database Design » General Questions
+Exercise :: Physical Database Design - General Questions
+Physical Database Design - General Questions
+Physical Database Design - True or False
+1. 	
+If a denormalization situation exists with a one-to-one binary relationship, which of the following is true?
+
+A.	All fields are stored in one relation.
+B.	All fields are stored in two relations.
+C.	All fields are stored in three relations.
+D.	All fields are stored in four relations.
+Answer: Option A
+
+Explanation:
+
+No answer description available for this question. Let us discuss.
+View Answer Discuss in Forum Workspace Report
+2. 	
+Selecting a data type involves which of the following?
+
+A.	Maximize storage space
+B.	Represent most values
+C.	Improve data integrity
+D.	All of the above.
+Answer: Option C
+
+Explanation:
+
+No answer description available for this question. Let us discuss.
+View Answer Discuss in Forum Workspace Report
+3. 	
+What is the best data type definition for Oracle when a field is alphanumeric and has a length that can vary?
+
+A.	VARCHAR2
+B.	CHAR
+C.	LONG
+D.	NUMBER
+Answer: Option A
+
+Explanation:
+
+No answer description available for this question. Let us discuss.
+View Answer Discuss in Forum Workspace Report
+4. 	
+If a denormalization situation exists with a many-to-many or associative binary relationship, which of the following is true?
+
+A.	All fields are stored in one relation.
+B.	All fields are stored in two relations.
+C.	All fields are stored in three relations.
+D.	All fields are stored in four relations.
+Answer: Option B
+
+Explanation:
+
+No answer description available for this question. Let us discuss.
+View Answer Discuss in Forum Workspace Report
+5. 	
+Which of the following is an advantage of partitioning?
+
+A.	Complexity
+B.	Inconsistent access speed
+C.	Extra space
+D.	Security
+Answer: Option D
+
+Explanation:
+
+No answer description available for this question. Let us discuss.
+View Answer Discuss in Forum Workspace Report
+1 2 3 Next »
+
+Read more:
+Physical Database Design - True or False
+Current Affairs 2019, 2020
+Interview Questions and Answers
+
+© 2009 - 2020 by IndiaBIX™ Technologies. All Rights Reserved. | Copyright | Terms of Use & Privacy Policy
+
+Contact us: info.indiabix@gmail.com

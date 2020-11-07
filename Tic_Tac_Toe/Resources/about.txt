@@ -1,0 +1,5 @@
+Tic Tac Toe
+Rabin Phaiju
+Algorithm: Back Tracking
+(miniMax)
+(alpha, beta, pruning)
