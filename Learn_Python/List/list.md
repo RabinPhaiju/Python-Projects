@@ -1,4 +1,9 @@
 1. List
+  - empty list = []
+    - list()
+  - a = [1,2,'rabin',['test','first']]
+
+1. List methods
 
    - list.append() :- add at the end of the list
      - a[len(a):] = [x].
@@ -26,7 +31,9 @@
    - list(set([1,1,2,4,5,5,6,7]))
 
 3. List comprehensions
-
+   - syntax
+       - [item for item in iterable]
+       -  [x for x in iterable if_condition]
    - squares = list(map(lambda x: x\*\*2, range(10)))
    - squares = [x**2 for x in range(10) if x%2==0]
    - [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]

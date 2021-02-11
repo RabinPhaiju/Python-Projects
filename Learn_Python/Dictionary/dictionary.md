@@ -1,5 +1,6 @@
 # dict has unique key
-
+## key or value or dict can be float ,int, list, tuple etc
+# unordered
 1. create
 
 - dict1 = {
@@ -47,3 +48,10 @@
        }
 7. dictionary comprehension
    - {x: x\*\*2 for x in (2, 4, 6)}
+
+8. dict.item()
+  - for key,value in y.items():
+  -  print(f"{key}={value}")
+
+9. dict.keys():
+  - return the list of keys in dict
