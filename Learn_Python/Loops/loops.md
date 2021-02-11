@@ -1,3 +1,5 @@
+# Loop manipulations(break, continue, else, ,pass)
+
 1. Loop
 
    - knights = {'gallahad': 'the pure', 'robin': 'the brave'}
@@ -46,5 +48,3 @@
 
    - sum([x for x in range(1,10)])
    - [x for x in range(1,10) if x%2==0]
-
-9. FizzBuzz
