@@ -5,4 +5,4 @@
     - leap year
 
 2.  Ternary Operator
-    - True if 0 == 0 else False
+    - True if condition else False
