@@ -22,7 +22,9 @@ display.goto(-290,285)
 display.hideturtle()
 display.color('white')
 display.fillcolor("white")
-display.write('Food: '+ str(FOOD_EATEN))
+
+with open('./Learn_Python/Turtle/snake/score.txt', 'r') as file_handler:
+    display.write('Score: '+ str(FOOD_EATEN) + ' High Score: '+file_handler.read())
 screen.update()
 
 
@@ -48,16 +50,22 @@ while game_is_on:
     y_square = math.pow((snake.get_pos()[1]-food.ycor()),2)
     d = math.sqrt(int(x_square) + int(y_square))
 
-    # food
+    # Score
     if(d < 2 and d > -2):
         FOOD_EATEN += 1
+        with open('./Learn_Python/Turtle/snake/score.txt', 'r') as file_handler:
+            if int(file_handler.read())<FOOD_EATEN:
+                file_handler = open('./Learn_Python/Turtle/snake/score.txt', 'w')
+                file_handler.write(str(FOOD_EATEN))
+                file_handler.close()
         print('Point : ',FOOD_EATEN)
         food.clear()
         food.goto(random.randint(-14,14)*20,random.randint(-14,14)*20)
         food.dot(20,'green')
         food.write(FOOD_EATEN)
         display.clear()
-        display.write('Food: '+ str(FOOD_EATEN))
+        with open('./Learn_Python/Turtle/snake/score.txt', 'r') as file_handler:
+            display.write('Score: '+ str(FOOD_EATEN) + ' High Score: '+file_handler.read())
         snake.move()
         snake.add_snake()
     
@@ -70,7 +78,7 @@ while game_is_on:
         game_is_on = False
         display.clear()
         display.goto(-40,0)
-        display.write('Food: '+ str(FOOD_EATEN) + ' Game Over!')
+        display.write('Score: '+ str(FOOD_EATEN) + ' Game Over!')
     
     # detect collision with tail
     for segment in snake.segments[1:]:
@@ -78,7 +86,7 @@ while game_is_on:
             game_is_on = False
             display.clear()
             display.goto(-40,0)
-            display.write('Food: '+ str(FOOD_EATEN) + ' Game Over!')
+            display.write('Score: '+ str(FOOD_EATEN) + ' Game Over!')
     
         
 screen.exitonclick()

@@ -1,13 +1,13 @@
 # mode --read(r), write(w), append(a), binary(b)
 # r= --> read-write
 
-# file_handler = open('first.txt', 'w')
-# file_handler.write('hello world')
-# file_handler.close()
+file_handler = open('first.txt', 'w')
+file_handler.write('hello world')
+file_handler.close()
 
 
-# file_handler = open('first.txt', 'r')
-# print(file_handler.read())
+file_handler = open('first.txt', 'r')
+print(file_handler.read())
 
 # temp = ['firstline\n', 'secondline\n', 'thirdline']
 # file_handler = open('first.txt', 'w')
@@ -54,8 +54,8 @@
 # encoding------------------
 
 
-with open('first.txt', 'r') as f:
-    print(f.encoding)
+# with open('first.txt', 'r') as f:
+    # print(f.encoding)
 
 
 
