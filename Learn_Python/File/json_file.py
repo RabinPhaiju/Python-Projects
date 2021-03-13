@@ -23,6 +23,7 @@ with open('file.json', 'r') as f:
     dict_str = '{"name":"rabin","age":12}'
     print(type(dict_str))
     dict_obj = json.loads(dict_str)
+    print(dict_obj)
     print(type(dict_obj))
 
 

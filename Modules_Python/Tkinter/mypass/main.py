@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-import csv
+import json
 import random
 import clipboard
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -30,15 +30,37 @@ def add_button_clicked():
     if len(website)<1 or len(email)<1 or len(password)<1:
         messagebox.showwarning(title='Details cannot be saved',message='Fields cannot be empty')
     else:
-        user = [website,email,password]
-        save_input = messagebox.askyesno(title='Do you want to save it',message=f'These are the details:\n{website}\n{email}\n{password}\n')
+        user = {'website':website,'email':email,'password':password}
+        save_input = messagebox.askyesno(title='Do you want to save it',message=f'These are the details:\nwebsite: {website}\nemail: {email}\npassword: {password}\n')
         if save_input:
             website_input.delete(0,END)
             email_iput.delete(0,END)
             password_input.delete(0,END)
-            with open('Modules_Python/Tkinter/mypass/user.csv', 'a') as f:
-                csv_writer = csv.writer(f)
-                csv_writer.writerow(user)
+            try:
+                with open('Modules_Python/Tkinter/mypass/user.json', 'r') as f:
+                    data = json.load(f)
+            except:
+                data = []
+                
+            with open('Modules_Python/Tkinter/mypass/user.json', 'w') as f:
+                data.append(user)
+                json.dump(data, f, indent=2)
+# ---------------------------- SEARCH PASSWORD ------------------------------- #
+def view_clicked():
+    global website_input
+    global email_input
+    global password_input
+    website = website_input.get()
+    try:
+        with open('Modules_Python/Tkinter/mypass/user.json', 'r') as f:
+            data = json.load(f)
+    except:
+        data = []
+    list_user = ''
+    for web in data:
+        if web['website'].lower()==website.lower():
+            list_user+= f'email: {web["email"]}\npassword: {web["password"]}\n\n'
+    messagebox.showinfo(title=web['website'],message=list_user)
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.minsize(height=450,width=420)
@@ -57,9 +79,12 @@ canvas.grid(row=0,column=0,columnspan=3)
 website_text = Label(text='Website: ',font=('Arial',14))
 website_text.grid(column=0,row=1)
 
-website_input = Entry(width=40)
+website_input = Entry(width=22)
 website_input.focus()
-website_input.grid(column=1,row=1,columnspan=2)
+website_input.grid(column=1,row=1)
+
+view_button = Button(text='Search',command=view_clicked,width=16)
+view_button.grid(column=2,row=1,columnspan=2)
 
 # email : input type
 email_text = Label(text='Email: ',font=('Arial',14))
