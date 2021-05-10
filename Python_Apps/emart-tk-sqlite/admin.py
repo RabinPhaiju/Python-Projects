@@ -22,7 +22,7 @@ fname = StringVar()
 lname = StringVar()
 
 
-with sqlite3.connect("./Database/store.db") as db:
+with sqlite3.connect("Python_Apps/emart-tk-sqlite/Database/store.db") as db:
     cur = db.cursor()
 
 def random_emp_id(stringLength):
@@ -49,7 +49,7 @@ class login_page:
 
         self.label1 = Label(root)
         self.label1.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/admin_login.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/admin_login.png")
         self.label1.configure(image=self.img)
         
 
@@ -83,7 +83,7 @@ class login_page:
         username = user.get()
         password = passwd.get()
 
-        with sqlite3.connect("./Database/store.db") as db:
+        with sqlite3.connect("Python_Apps/emart-tk-sqlite/Database/store.db") as db:
             cur = db.cursor()
         find_user = "SELECT * FROM employee WHERE emp_id = ? and password = ?"
         cur.execute(find_user, [username, password])
@@ -160,7 +160,7 @@ class Admin_Page:
 
         self.label1 = Label(adm)
         self.label1.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/admin.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/admin.png")
         self.label1.configure(image=self.img)
 
         self.message = Label(adm)
@@ -255,7 +255,7 @@ class Inventory:
 
         self.label1 = Label(inv)
         self.label1.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/inventory.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/inventory.png")
         self.label1.configure(image=self.img)
 
         self.message = Label(inv)
@@ -542,7 +542,7 @@ class add_product:
 
         self.label1 = Label(p_add)
         self.label1.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/add_product.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/add_product.png")
         self.label1.configure(image=self.img)
 
         self.clock = Label(p_add)
@@ -647,7 +647,7 @@ class add_product:
                                         messagebox.showerror("Oops!", "Invalid MRP.", parent=p_add)
                                     else:
                                         if valid_phone(pvendor):
-                                            with sqlite3.connect("./Database/store.db") as db:
+                                            with sqlite3.connect("Python_Apps/emart-tk-sqlite/Database/store.db") as db:
                                                 cur = db.cursor()
                                             insert = (
                                                         "INSERT INTO raw_inventory(product_name, product_cat, product_subcat, stock, mrp, cost_price, vendor_phn) VALUES(?,?,?,?,?,?,?)"
@@ -704,7 +704,7 @@ class Update_Product:
 
         self.label1 = Label(p_update)
         self.label1.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/update_product.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/update_product.png")
         self.label1.configure(image=self.img)
 
         self.clock = Label(p_update)
@@ -809,7 +809,7 @@ class Update_Product:
                                     else:
                                         if valid_phone(pvendor):
                                             product_id = valll[0]
-                                            with sqlite3.connect("./Database/store.db") as db:
+                                            with sqlite3.connect("Python_Apps/emart-tk-sqlite/Database/store.db") as db:
                                                 cur = db.cursor()
                                             update = (
                                             "UPDATE raw_inventory SET product_name = ?, product_cat = ?, product_subcat = ?, stock = ?, mrp = ?, cost_price = ?, vendor_phn = ? WHERE product_id = ?"
@@ -868,7 +868,7 @@ class Employee:
 
         self.label1 = Label(emp)
         self.label1.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/employee.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/employee.png")
         self.label1.configure(image=self.img)
 
         self.message = Label(emp)
@@ -1162,7 +1162,7 @@ class add_employee:
 
         self.label1 = Label(e_add)
         self.label1.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/add_employee.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/add_employee.png")
         self.label1.configure(image=self.img)
 
         self.clock = Label(e_add)
@@ -1309,7 +1309,7 @@ class Update_Employee:
 
         self.label1 = Label(e_update)
         self.label1.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/update_employee.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/update_employee.png")
         self.label1.configure(image=self.img)
 
         self.clock = Label(e_update)
@@ -1462,7 +1462,7 @@ class Invoice:
 
         self.label1 = Label(invoice)
         self.label1.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/invoices.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/invoices.png")
         self.label1.configure(image=self.img)
 
         self.message = Label(invoice)
@@ -1682,7 +1682,7 @@ class open_bill:
 
         self.label1 = Label(bill)
         self.label1.place(relx=0, rely=0, width=765, height=488)
-        self.img = PhotoImage(file="./images/bill.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/bill.png")
         self.label1.configure(image=self.img)
         
         self.name_message = Text(bill)

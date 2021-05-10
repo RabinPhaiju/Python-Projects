@@ -2,7 +2,7 @@ import json
 import difflib
 from difflib import get_close_matches
 
-with open('data.json', 'r') as f:
+with open('Python_Apps/Dictionary/data.json', 'r') as f:
     data = json.load(f)
 
 def word_dictionary(word):

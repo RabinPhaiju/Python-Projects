@@ -12,7 +12,7 @@ from tkinter import scrolledtext as tkst
 #============================================
 
 root = Tk()
-root.wm_iconbitmap('./images/etech.ico')
+root.wm_iconbitmap('Python_Apps/emart-tk-sqlite/images/etech.ico')
 root.geometry("1366x768")
 root.title("Product Manager")
 
@@ -30,7 +30,7 @@ cust_search_bill = StringVar()
 bill_date = StringVar()
 
 
-with sqlite3.connect("./Database/store.db") as db:
+with sqlite3.connect("Python_Apps/emart-tk-sqlite/Database/store.db") as db:
     cur = db.cursor()
 
 def random_bill_number(stringLength):
@@ -49,7 +49,7 @@ def login(Event=None):
     username = user.get()
     password = passwd.get()
 
-    with sqlite3.connect("./Database/store.db") as db:
+    with sqlite3.connect("Python_Apps/emart-tk-sqlite/Database/store.db") as db:
         cur = db.cursor()
     find_user = "SELECT * FROM employee WHERE (emp_id = ? or name = ?) and password = ?"
     cur.execute(find_user, [username,username, password])
@@ -90,7 +90,7 @@ class login_page:
 
         self.label1 = Label(root)
         self.label1.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/employee_login.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/employee_login.png")
         self.label1.configure(image=self.img)
 
         self.entry1 = Entry(root)
@@ -169,13 +169,13 @@ def exitt():
 class bill_window:
     def __init__(self, top=None):
         top.geometry("1366x768")
-        top.wm_iconbitmap('./images/etech.ico')
+        top.wm_iconbitmap('Python_Apps/emart-tk-sqlite/images/etech.ico')
         top.resizable(0, 0)
         top.title("Billing System")
 
         self.label = Label(biller)
         self.label.place(relx=0, rely=0, width=1366, height=768)
-        self.img = PhotoImage(file="./images/bill_window.png")
+        self.img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/bill_window.png")
         self.label.configure(image=self.img)
 
         self.message = Label(biller)
@@ -613,7 +613,7 @@ class bill_window:
 
                     
 
-                    with sqlite3.connect("./Database/store.db") as db:
+                    with sqlite3.connect("Python_Apps/emart-tk-sqlite/Database/store.db") as db:
                         cur = db.cursor()
                     insert = (
                         "INSERT INTO bill(bill_no, date, customer_name, customer_no, bill_details) VALUES(?,?,?,?,?)"

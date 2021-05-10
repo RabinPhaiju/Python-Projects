@@ -16,18 +16,18 @@ def Exit():
 
 def emp():
     main.withdraw()
-    os.system("python employee.py")
+    os.system("python Python_Apps/emart-tk-sqlite/employee.py")
     # main.deiconify()
 
 
 def adm():
     main.withdraw()
-    os.system("python admin.py")
+    os.system("python Python_Apps/emart-tk-sqlite/admin.py")
     # main.deiconify()
 
 label1 = Label(main)
 label1.place(relx=0, rely=0, width=1366, height=768)
-img = PhotoImage(file="./images/wall.png")
+img = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/wall.png")
 label1.configure(image=img)
 
 button1 = Button(main)
@@ -39,7 +39,7 @@ button1.configure(cursor="hand2")
 button1.configure(foreground="#ffffff")
 button1.configure(background="#ffffff")
 button1.configure(borderwidth="0")
-img2 = PhotoImage(file="./images/1.png")
+img2 = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/1.png")
 button1.configure(image=img2)
 button1.configure(command=emp)
 
@@ -52,7 +52,7 @@ button2.configure(cursor="hand2")
 button2.configure(foreground="#ffffff")
 button2.configure(background="#ffffff")
 button2.configure(borderwidth="0")
-img3 = PhotoImage(file="./images/2.png")
+img3 = PhotoImage(file="Python_Apps/emart-tk-sqlite/images/2.png")
 button2.configure(image=img3)
 button2.configure(command=adm)
 
