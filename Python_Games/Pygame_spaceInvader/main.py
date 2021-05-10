@@ -38,14 +38,14 @@ screen = pygame.display.set_mode((800, 600))
 # event is the activity in the pygame
 
 # background
-backgroundImg = pygame.image.load('background.jpg')
+backgroundImg = pygame.image.load('Python_Games/Pygame_spaceInvader/background.jpg')
 
 # background sound
-mixer.music.load('background.wav')
+mixer.music.load('Python_Games/Pygame_spaceInvader/background.wav')
 mixer.music.play(-1)
 
 # bullet
-bulletImg = pygame.image.load('bullet.png')
+bulletImg = pygame.image.load('Python_Games/Pygame_spaceInvader/bullet.png')
 bulletX = 0
 bulletY = 480
 bulletY_change = -2
@@ -53,11 +53,11 @@ bullet_state = 'ready'
 
 # title and icon
 pygame.display.set_caption('Space Invaders')
-icon = pygame.image.load('ufo.png')
+icon = pygame.image.load('Python_Games/Pygame_spaceInvader/ufo.png')
 pygame.display.set_icon(icon)
 
 # player
-playerImg = pygame.image.load('player.png')
+playerImg = pygame.image.load('Python_Games/Pygame_spaceInvader/player.png')
 playerX = 370
 playerY = 480
 playerX_change = 0
@@ -74,7 +74,7 @@ enemyY_change = []
 total_enemy = 40
 num_of_enemy = 5
 for i in range(total_enemy):
-    enemyImg.append(pygame.image.load('enemy.png'))
+    enemyImg.append(pygame.image.load('Python_Games/Pygame_spaceInvader/enemy.png'))
     enemyX.append(random.randint(2, 730))
     enemyY.append(random.randint(2, 130))
     enemyX_change.append(enemy_change)
