@@ -4,16 +4,21 @@ import argparse
 import os
 import ast
 import queue
+from typing import final
 import sounddevice
 import vosk
 import sys
 import _thread
+from datetime import datetime
 
 # ui
 is_running=True
+final_text  =[]
 root = Tk()
 fls = StringVar()
 fls2 = StringVar()
+fls3 = StringVar()
+fls_diff = StringVar()
 
 ##
 canvas = Canvas(root, width=800, height=650)
@@ -23,9 +28,14 @@ canvas.create_text(100,10,fill="darkblue",font="Times 20 italic bold",
 
 fls.set('Start Record') # Update
 fls2.set('Your Speech')
+fls3.set('')
+
 
 wrapper = LabelFrame(root,text='Spech to Text')
 wrapper.pack(fill="both",expand="yes",padx=10,pady=10)
+
+lbl3 = Label(wrapper,textvariable=fls3)
+lbl3.pack()
 
 lbl = Label(wrapper,textvariable=fls)
 lbl.pack()
@@ -37,16 +47,20 @@ def record():
     global is_running
     is_running=True
     btn1.pack_forget()
-    btn2.pack(side=tk.LEFT,padx=30)
+    btn2.pack(padx=20)
     fls.set('Recording') # Update
     _thread.start_new_thread(startrecord,())
 
 def stop():
-    global is_running
+    global is_running,final_text
     is_running = False
     fls.set('Start Recording') 
-    btn1.pack(side=tk.LEFT,padx=30)
+    btn1.pack(padx=20)
     btn2.pack_forget()
+    time_stamp = f"Python_Apps/Speech_Recognition/{datetime.now().strftime('%Y-%m-%d %H-%M-%S')}.txt"
+    with open(time_stamp, 'w') as f:
+        f.write(' '.join(final_text))
+        f.close()
 
 def startrecord():
     # recorder
@@ -123,11 +137,17 @@ def startrecord():
                 while is_running:
                     data = q.get()
                     if rec.AcceptWaveform(data):
-                        # print(rec.Result())
-                        # fls.set(rec.Result()) # Update
-                        pass
+                        fls2.set('Listening..')
+                        text = ast.literal_eval(rec.FinalResult())['text']
+                        global final_text
+                        final_text.append(text)
+                        new_text = ' '.join(final_text)
+                        new_text = [new_text[i:i+110] for i in range(0, len(new_text), 110)]
+                        fls3.set('\n'.join(new_text))
+                        # print(new_text)
+                        # pass
                     else:
-                        # print(ast.literal_eval(rec.PartialResult())['partial'])
+                        # print(rec.PartialResult())
                         text = ast.literal_eval(rec.PartialResult())['partial']
                         text =  [text[i:i+110] for i in range(0, len(text), 110)]
                         fls2.set('\n'.join(text))
@@ -135,6 +155,7 @@ def startrecord():
                         print('helooooooooooooooooo')
                         dump_fn.write(data)
                 else:
+                    fls2.set('')
                     parser.exit(0)
 
     except KeyboardInterrupt:
@@ -143,11 +164,11 @@ def startrecord():
     except Exception as e:
         parser.exit(type(e).__name__ + ': ' + str(e))
 
-btn3 = Button(wrapper,text="Exit",command=lambda:exit())
-btn3.pack(side=tk.LEFT,padx=15)
+# btn3 = Button(wrapper,text="Exit",command=lambda:exit())
+# btn3.pack(padx=1)
 
 btn1 = Button(wrapper,text="Record",command=record)
-btn1.pack(side=tk.LEFT,padx=30)
+btn1.pack(padx=20)
 
 btn2 = Button(wrapper,text="Stop",command=stop)
 
