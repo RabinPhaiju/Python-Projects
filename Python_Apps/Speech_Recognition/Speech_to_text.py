@@ -4,7 +4,6 @@ import argparse
 import os
 import ast
 import queue
-from typing import final
 import sounddevice
 import vosk
 import sys
@@ -58,6 +57,7 @@ def stop():
     btn1.pack(padx=20)
     btn2.pack_forget()
     time_stamp = f"Python_Apps/Speech_Recognition/{datetime.now().strftime('%Y-%m-%d %H-%M-%S')}.txt"
+    time_stamp = 'Python_Apps/Speech_Recognition/textfile.txt'
     with open(time_stamp, 'w') as f:
         f.write(' '.join(final_text))
         f.close()
@@ -174,6 +174,6 @@ btn2 = Button(wrapper,text="Stop",command=stop)
 
 
 root.title('Speech to Text.')
-root.geometry("720x360")
+root.geometry("720x600")
 root.resizable(False,False)
 root.mainloop()
