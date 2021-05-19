@@ -4,7 +4,7 @@ import os
 import HandTrackingModule as htm
 
 pTime = 0
-folder_path = 'Python_Apps/Finger_Count/files'
+folder_path = 'Python_Apps/Finger_Count_hand_detection/files'
 fingerList = os.listdir(folder_path)
 overlayImage = []
 for imagePath in fingerList:
@@ -13,8 +13,8 @@ for imagePath in fingerList:
     overlayImage.append(image)
 
 cap = cv2.VideoCapture(0)
-cap.set(3,640)
-cap.set(4, 480)
+cap.set(3,1280)
+cap.set(4, 720)
 
 board = []
 
