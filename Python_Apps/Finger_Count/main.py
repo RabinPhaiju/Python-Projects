@@ -16,39 +16,41 @@ cap = cv2.VideoCapture(0)
 cap.set(3,640)
 cap.set(4, 480)
 
+board = []
+
 # finger detector
 detector = htm.HandDetector(detectionCon=0.75)
 
-# finger landmark as picture
-tipIds = [4,8,12,16,20]
-
-
 while True:
     success,img = cap.read()
+    img = cv2.flip(img,1)
     # find the hand
     img = detector.findHands(img)
     # list of landark
-    lmList = detector.findPosition(img,draw=False)
+    lmList,bbox = detector.findPosition(img,draw=True) # draw the rectangle
     # print(lmList)
     if len(lmList) !=0:
-        finger = []
-        # thumb
-        if lmList[4][1] > lmList[4-1][1]:
-                finger.append(1)
-        else:
-            finger.append(0)
-        # other 4 finger
-        for id in range(1,5):
-            if lmList[tipIds[id]][2] < lmList[tipIds[id]-2][2]:
-                finger.append(1)
-            else:
-                finger.append(0)
+        finger = detector.fingerUp()
+
+        # Find Distance between index and Thumb
+        area = (bbox[2] - bbox[0]) * (bbox[3] - bbox[1]) // 100
+        length, img, lineInfo = detector.findDistance(4, 8, img)
+        cv2.putText(img,f'len : {int(length)}',(120,100),cv2.FONT_HERSHEY_PLAIN,2,(255,0,0),2)
+
+        ## drawing
+        if length<30:
+            x1, y1, *_ = lineInfo
+            board.append((x1,y1))
         
         # print(finger)
         # overlay image by slicing(image is matrix)
         # slicing 10-110 = 100 pixel and replace with image.
         img[10:110,10:110] = overlayImage[sum(finger)]
-        cv2.putText(img,f'Finger: {int(sum(finger))}',(120,80),cv2.FONT_HERSHEY_PLAIN,2,(255,0,0),2)
+        cv2.putText(img,f'Finger: {int(sum(finger))}',(120,70),cv2.FONT_HERSHEY_PLAIN,2,(255,0,0),2)
+    
+    # drawing
+    for point in board:
+        cv2.circle(img, point, 15, (0, 0, 0), cv2.FILLED)
 
     # fps
     cTime = time.time()
