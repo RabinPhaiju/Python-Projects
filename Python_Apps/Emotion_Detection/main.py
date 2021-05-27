@@ -13,7 +13,7 @@ while True:
     success,full_size_image  = cap.read()
     full_size_image = cv2.flip(full_size_image,1)
     gray = cv2.cvtColor(full_size_image,cv2.COLOR_BGR2GRAY)
-    faces = cv2.CascadeClassifier('Python_Apps/Emotion_Detection/files/haarcascade_frontalface_default.xml')
+    faces = face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     faces = faces.detectMultiScale(gray,1.1,4)
 
     # Draw rectange around faces

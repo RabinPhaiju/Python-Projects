@@ -15,7 +15,6 @@ def thread_prediction():
     a +=1
     print(a)
 
-_thread.start_new_thread(thread_prediction,())
 
 while True:
     success,img = cap.read()
@@ -27,12 +26,13 @@ while True:
 
     for (x, y, w, h) in faces:
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+        _thread.start_new_thread(thread_prediction,())
         if isinstance(prediction,dict):
-            print(prediction['dominant_emotion'])
+            # print(prediction['dominant_emotion'])
             cv2.putText(img,prediction['dominant_emotion'] , (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+            _thread.exit()
 
     cv2.imshow('Emotion Detection',img)
     key = cv2.waitKey(1)
     if key == ord('q'):
-        _thread.exit()
         break
