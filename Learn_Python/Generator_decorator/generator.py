@@ -1,25 +1,13 @@
 # fibonacci
 
 
-def fibo():
-    x, y = 0, 1
-    while True:
-        yield x
-        x, y = y , x + y # same line ma x change paxi matra hunxa
-
-
-fibonacci = fibo()
-print([next(fibonacci) for i in range(10)])
-# for i in fibonacci: # infinite
-    # print(next(fibonacci), end=' ')
-
-
 
 # ----------generator comprehension -square------
 # ()
 sqr_num = (i**2 for i in range(100))
 for i in range(10):
-    print(next(sqr_num))
+    # print(next(sqr_num))
+    pass
 
 
 # ------------- Iter() ---------------------
@@ -28,7 +16,7 @@ s = 'hello'
 
 s = iter(s)
 
-print(next(s))
+# print(next(s))
 
 # class -------- generator ------------------------
 class MyGen():
@@ -49,5 +37,4 @@ class MyGen():
 
 gen = MyGen(0, 100)
 for i in gen:
-    # print(i)
-    pass
+    print(i)
