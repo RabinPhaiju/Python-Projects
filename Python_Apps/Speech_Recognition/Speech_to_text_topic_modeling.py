@@ -195,7 +195,7 @@ def topic_modeling(final_text):
     data_clean = pd.DataFrame.from_dict(data_combined).transpose()
     data_clean.columns = ['transcript']
     data_clean = data_clean.sort_index()
-    # print(data_clean)
+    print('data_clean',data_clean)
 
     cv = CountVectorizer(stop_words=['english','aah','aaah']) # Add more words
     data_cv = cv.fit_transform(data_clean.transcript)
