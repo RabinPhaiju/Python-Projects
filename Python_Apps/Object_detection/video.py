@@ -45,4 +45,4 @@ while True:
                         font,1,color,2)
 
     cv2.imshow("Output",img)
-    cv2.waitKey(1)
+    cv2.waitKey(10)
