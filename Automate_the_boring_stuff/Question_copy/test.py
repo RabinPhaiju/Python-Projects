@@ -4,7 +4,7 @@ listABCDE = ['question','a', 'b', 'c', 'd', 'answer']
 # with open('question.txt','w') as ques:
     # ques.write(pyperclip.paste())
 
-with open('question.txt','r') as ques:
+with open('Automate_the_boring_stuff/Question_copy/question.txt','r') as ques:
     name = ques.read()
 
 
@@ -41,7 +41,7 @@ for Question, A, B, C, D, Answer in zip(new_list, Alist, Blist, Clist, Dlist, An
         new_dict[listABCDE[5]] = C
     elif Answer == 'D':
         new_dict[listABCDE[5]] = D   
-    with open('answer.json','r+') as file:
+    with open('Automate_the_boring_stuff/Question_copy/answer.json','r+') as file:
         data = json.load(file)
         data.append(new_dict)
         file.seek(0)
