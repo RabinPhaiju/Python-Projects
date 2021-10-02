@@ -25,8 +25,8 @@ class MyHandler(FileSystemEventHandler):
             os.rename(src, destination)
 
 
-folder_to_track = "test_folder"
-folder_destination = "new_folder"
+folder_to_track = "Automation_Idea/Auto_Move_Files/test_folder"
+folder_destination = "Automation_Idea/Auto_Move_Files/new_folder"
 event_handler = MyHandler()
 observer = Observer()
 observer.schedule(event_handler, folder_to_track, recursive=True)
