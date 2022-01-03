@@ -1,5 +1,6 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
+from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtGui import QAction, QIcon
+from PyQt6.QtWidgets import QMessageBox
 import sqlite3
 
 
@@ -111,9 +112,9 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        self.actionExit = QtWidgets.QAction(MainWindow)
+        self.actionExit = QAction(MainWindow)
         self.actionExit.setObjectName("actionExit")
-        self.actionAbout_Book_Store = QtWidgets.QAction(MainWindow)
+        self.actionAbout_Book_Store = QAction(MainWindow)
         self.actionAbout_Book_Store.setObjectName("actionAbout_Book_Store")
         self.menuFile.addAction(self.actionExit)
         self.menuAbout.addAction(self.actionAbout_Book_Store)
@@ -270,4 +271,4 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     ui.create_table()
     MainWindow.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
