@@ -65,4 +65,5 @@ def read_data():
     for user in users.each():
         print('val=',user.val(),'key=',user.key())
 
-# read_data()
+login()
+read_data()
