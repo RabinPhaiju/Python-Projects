@@ -5,3 +5,4 @@ __pycache__/
 .ipynb_checkpoints
 Modules_Python/Firebase/etech-1234-1f2417a825e4.json
 Modules_Python/Firebase/firebase_config.env
+p_venv/
