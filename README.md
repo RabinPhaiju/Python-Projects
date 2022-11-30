@@ -1,6 +1,8 @@
 # Python-Projects
 
 - install python >3.8
+- install python venv
+    - python3 -m venv your_venv_name
 
 - Interpreted language.
 - General Purpose language.
