@@ -7,7 +7,7 @@ pygame.init()
 pygame.joystick.init()
 
 # background
-backgroundImg = pygame.image.load('Python_Games/Snake_Pygame/Resources/background.png')
+backgroundImg = pygame.image.load('Resources/background.png')
 
 
 class Cube(object):
