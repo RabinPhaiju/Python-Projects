@@ -3,7 +3,7 @@ import csv
 import smtplib
 
 my_email = 'rabinphaiju@gmail.com'
-password = 'kdslfkjdslf'
+password = 'enter your password'
 
 with open('Learn_Python/SMTP/birthday_wish/birthdays.csv') as f:
     user_data = csv.reader(f)

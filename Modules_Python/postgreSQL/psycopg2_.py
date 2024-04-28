@@ -4,7 +4,7 @@ def credentials():
     conn = psycopg2.connect("""
     dbname='PostgreSQL_Python'
     user ='postgres'
-    password='rabina00'
+    password='password'
     host='localhost'
     port= '5432'
     """)

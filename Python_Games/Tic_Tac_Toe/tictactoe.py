@@ -63,13 +63,13 @@ class Ui_TicTacToe(object):
         self.pushButton_1.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.pushButton_1.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("Python_Games/Tic_Tac_toe/Resources/blank.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("Resources/blank.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("Python_Games/Tic_Tac_toe/Resources/cross.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("Resources/cross.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("Python_Games/Tic_Tac_toe/Resources/circle.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("Resources/circle.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
         self.pushButton_1.setIcon(icon)
         self.pushButton_1.setIconSize(QtCore.QSize(100, 100))
