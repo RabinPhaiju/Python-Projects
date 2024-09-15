@@ -1,3 +1,5 @@
+# Everything in Python is an Object
+
 # Python-Projects
 
 - install python >3.8
