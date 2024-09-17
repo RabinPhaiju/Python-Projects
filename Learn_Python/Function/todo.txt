@@ -13,7 +13,6 @@ Functions
 pip
 virtual environment
 modules / packages
-debugger - pdb,ipdb
 django
 oop ->class
 pep 8 style guide
