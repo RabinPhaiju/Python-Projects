@@ -46,6 +46,7 @@ p2 = Person('sabin', 33)
 p1.take_private()
 
 # -----------------introspection--------------------
+# checks if what is in the class that can be accessed
 print(dir(p1))
 
 

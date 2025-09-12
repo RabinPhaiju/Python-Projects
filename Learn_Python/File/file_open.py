@@ -24,6 +24,8 @@ print(file_handler.read())
 # file_handler = open('first.txt', 'r')
 # print(file_handler.readline())
 # print(file_handler.readline())
+
+### or use file_handler.readlines() -> return list
 # file_handler.close()
 
 
