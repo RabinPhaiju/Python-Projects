@@ -1,8 +1,11 @@
 # Python-Projects
 
-- install python >3.8
+- install python >3.11
 - install python venv
-    - python3 -m venv your_venv_name
+    - uv venv --python 3.11
+    - source .venv/bin/activate
+    - uv sync
+    <!-- - uv add -r requirements.txt -->
 
 - Interpreted language.
 - General Purpose language.
